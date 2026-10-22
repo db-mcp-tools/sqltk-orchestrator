@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dbt-orchestrator"
+version = "0.2.0"
+description = "[可选] 跨 MCP 编排引擎：按 next_actions 自动追链 + recipe 确定性流水线。需要先装齐 6 个 MCP。"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "Proprietary"}
+
+dependencies = [
+    "dbt-core>=0.2.0",
+    "dbt-store>=0.2.0",
+    "mcp-sql-review>=0.2.0",
+    "mcp-change-risk>=0.2.0",
+    "mcp-dbwatch>=0.2.0",
+    "mcp-migration-diff>=0.2.0",
+    "mcp-data-semantics>=0.2.0",
+    "mcp-profile-hub>=0.2.0",
+]
+
+[project.scripts]
+dbt = "dbt_orchestrator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed", "*.yaml", "*.yml", "*.json"]
