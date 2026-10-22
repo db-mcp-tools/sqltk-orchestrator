@@ -1,18 +1,39 @@
+# 本文件由 scripts/gen-pyprojects.py 从 scripts/repo_config.py 生成，不要手改。
+# 改元数据请改 repo_config.py 后重跑：python scripts/gen-pyprojects.py
+
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=77", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dbt-orchestrator"
+name = "sqltk-orchestrator"
 version = "0.2.0"
 description = "[可选] 跨 MCP 编排引擎：按 next_actions 自动追链 + recipe 确定性流水线。需要先装齐 6 个 MCP。"
 readme = "README.md"
-requires-python = ">=3.9"
-license = {text = "Proprietary"}
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "罗文星", email = "1172566410@qq.com" }]
+maintainers = [{ name = "罗文星", email = "1172566410@qq.com" }]
+keywords = ["database", "sql", "dba", "database-tooling", "llm", "mcp", "orchestration", "workflow", "pipeline", "dba-workflow"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Typing :: Typed",
+]
 
 dependencies = [
-    "dbt-core>=0.2.0",
-    "dbt-store>=0.2.0",
+    "sqltk-core>=0.2.0",
+    "sqltk-store>=0.2.0",
     "mcp-sql-review>=0.2.0",
     "mcp-change-risk>=0.2.0",
     "mcp-dbwatch>=0.2.0",
@@ -22,10 +43,23 @@ dependencies = [
 ]
 
 [project.scripts]
-dbt = "dbt_orchestrator.cli:main"
+sqltk = "dbt_orchestrator.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/YOUR_GH_OWNER/sqltk-orchestrator"
+Repository = "https://github.com/YOUR_GH_OWNER/sqltk-orchestrator"
+Issues = "https://github.com/YOUR_GH_OWNER/sqltk-orchestrator/issues"
+Changelog = "https://github.com/YOUR_GH_OWNER/db-ai-toolchain/blob/main/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
 "*" = ["py.typed", "*.yaml", "*.yml", "*.json"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["F", "E9"]
