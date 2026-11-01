@@ -46,10 +46,10 @@ dependencies = [
 sqltk = "dbt_orchestrator.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/Apollo-lwx/sqltk-orchestrator"
-Repository = "https://github.com/Apollo-lwx/sqltk-orchestrator"
-Issues = "https://github.com/Apollo-lwx/sqltk-orchestrator/issues"
-Changelog = "https://github.com/Apollo-lwx/db-ai-toolchain/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/db-mcp-tools/sqltk-orchestrator"
+Repository = "https://github.com/db-mcp-tools/sqltk-orchestrator"
+Issues = "https://github.com/db-mcp-tools/sqltk-orchestrator/issues"
+Changelog = "https://github.com/db-mcp-tools/db-ai-toolchain/blob/master/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
 where = ["src"]
